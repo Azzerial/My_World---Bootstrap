@@ -22,7 +22,7 @@ Here's some few shortcuts:
 * Move the grid on the X axis: `AltKey + LeftKey [←] or  RightKey [→]`
 * Move the grid on the Y axis: `AltKey + UpKey [↑] or DownKey [↓]`
 * Move the grid on the Z axis: `AltKey + PageUp [⇞] or PageDown [⇟]` 
-> (*) Combine the shortcut with the ControlKey to accelerate the rotation.
+> (*) Combine the shortcut with the ControlKey to accelerate the rotation or zoom.
 
 ### Random Stuff
 > Perlin noise:
