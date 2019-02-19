@@ -10,9 +10,10 @@ SRC	=	./src/main.c							\
 		./src/terrain_rendering.c				\
 		./src/event_manager.c
 
-CFLAGS	=	-W -Wall -Wextra -Werror -I./lordsclib/include/ -I./include/
+CFLAGS	=	-W -Wall -Wextra -Werror -I./include/
 
-LDFLAGS	=	-L./lordsclib/ -llords_clib -lcsfml-graphics -lcsfml-window -lm
+LDFLAGS	=	-lcsfml-graphics -lcsfml-window -lm
+#LDFLAGS	=	-L./lordsclib/ -llords_clib -lcsfml-graphics -lcsfml-window -lm
 
 OBJ	=	$(SRC:.c=.o)
 
@@ -23,17 +24,17 @@ NAME	=	bootstrap
 all:	$(NAME)
 
 $(NAME):	$(OBJ)
-	@make -s -C ./lordsclib/
+#	@make -s -C ./lordsclib/
 	$(CC) -o $(NAME) $(OBJ) $(LDFLAGS) $(CFLAGS)
 
 clean:
-	@make clean -C ./lordsclib/
+#	@make clean -C ./lordsclib/
 	@rm -f *~
 	@rm -f \#*\#
 	@rm -f $(OBJ)
 
 fclean:	clean
-	@make fclean -C ./lordsclib/
+#	@make fclean -C ./lordsclib/
 	@rm -f $(NAME)
 
 re:	fclean	all

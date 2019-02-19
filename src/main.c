@@ -5,17 +5,8 @@
 ** main.c
 */
 
-#include <stdlib.h>
-#include "attribute.h"
+#include "terrain.h"
 
-int main(UNUSED int ac, UNUSED char *av[])
-{
-    AUTO(FREE_STRING) char *str = malloc(sizeof(str));
-
-    return (0);
-}
-
-/*
 float **terrain_3d;
 sfVector2f **terrain_2d;
 
@@ -31,7 +22,7 @@ float x_offset = 0;
 float y_offset = 0;
 float z_offset = 0;
 
-int main(UNUSED int ac, UNUSED char *av[])
+int main(/*UNUSED int ac, UNUSED char *av[]*/)
 {
     malloc_terrains();
     load_terrain();
@@ -54,4 +45,3 @@ int main(UNUSED int ac, UNUSED char *av[])
 	}
     return (0);
 }
-*/

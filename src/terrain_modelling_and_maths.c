@@ -5,7 +5,7 @@
 ** terrain_modelling_and_maths.c
 */
 
-#include "attribute.h"
+//#include "attribute.h"
 #include "terrain.h"
 
 void    malloc_terrains()
