@@ -1,6 +1,6 @@
 # My_World - Bootstrap
 
-Here's the bootstrap of the **my_world** project. To download it, type:
+Here's an enhanced version of the **my_world** project's bootstrap. To download it, type:
 
     git clone https://github.com/Azzerial/refactored-pancake
 
