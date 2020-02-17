@@ -1,11 +1,14 @@
-/*
-** EPITECH PROJECT, 2018
-** bootstrap
-** File description:
-** main.c
+/*   __  __       __      __       _    _
+**  |  \/  |_  _  \ \    / /__ _ _| |__| |
+**  | |\/| | || |  \ \/\/ / _ \ '_| / _` |
+**  |_|  |_|\_, |   \_/\_/\___/_| |_\__,_|
+**          |__/
+**
+** A CSFML world terraforming tool.
+** Made by Robin Mercier © Lord Estropié, 2020
 */
 
-#include "terrain.h"
+#include "application.h"
 
 float **terrain_3d;
 sfVector2f **terrain_2d;
@@ -22,26 +25,27 @@ float x_offset = 0;
 float y_offset = 0;
 float z_offset = 0;
 
-int main(/*UNUSED int ac, UNUSED char *av[]*/)
+int main(UNUSED int ac, UNUSED char *av[], UNUSED char *env[])
 {
-    malloc_terrains();
+    malloc_terrain();
     load_terrain();
 
-	sfRenderWindow *window;
-	sfEvent event;
-	sfVideoMode mode = (sfVideoMode) {1280, 720, 64};
-	sfWindowStyle style = {sfTitlebar | sfClose | sfResize};
-	window = sfRenderWindow_create(mode, "Follow UniBe@t on SoundCloud: https://soundcloud.com/unibe-t", style, 0);
-	sfRenderWindow_setFramerateLimit(window, 32);
+    sfRenderWindow *window;
+    sfEvent event;
+    sfVideoMode mode = (sfVideoMode) {1280, 720, 64};
+    sfWindowStyle style = {sfTitlebar | sfClose | sfResize};
+    window = sfRenderWindow_create(mode, "Application (c) Robin Mercier, 2020", style, 0);
 
-	while (sfRenderWindow_isOpen(window)) {
-		while (sfRenderWindow_pollEvent(window, &event))
-			manage_events(window, event);
-	    manage_keys();
-		project_terrain();
-		sfRenderWindow_clear(window, sfBlack);
-		render_terrain(window);
-		sfRenderWindow_display(window);
-	}
+    sfRenderWindow_setFramerateLimit(window, 32);
+
+    while (sfRenderWindow_isOpen(window)) {
+        while (sfRenderWindow_pollEvent(window, &event))
+            manage_events(window, event);
+        manage_keys();
+        project_terrain();
+        sfRenderWindow_clear(window, sfBlack);
+        render_terrain(window);
+        sfRenderWindow_display(window);
+    }
     return (0);
 }

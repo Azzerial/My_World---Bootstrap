@@ -1,40 +1,42 @@
+##   __  __       __      __       _    _
+##  |  \/  |_  _  \ \    / /__ _ _| |__| |
+##  | |\/| | || |  \ \/\/ / _ \ '_| / _` |
+##  |_|  |_|\_, |   \_/\_/\___/_| |_\__,_|
+##          |__/
 ##
-## EPITECH PROJECT, 2018
-## my_world Bootstrap
-## File description:
-## Makefile
+## A CSFML world terraforming tool.
+## Made by Robin Mercier © Lord Estropié, 2020
 ##
 
-SRC	=	./src/main.c							\
-		./src/terrain_modelling_and_maths.c		\
-		./src/terrain_rendering.c				\
-		./src/event_manager.c
+rwildcard = $(wildcard $1$2)$(foreach d,$(wildcard $1*),$(call rwildcard,$d/,$2))
 
-CFLAGS	=	-W -Wall -Wextra -Werror -I./include/
+SRC = $(call rwildcard,src/,*.c)
 
-LDFLAGS	=	-lcsfml-graphics -lcsfml-window -lm
-#LDFLAGS	=	-L./lordsclib/ -llords_clib -lcsfml-graphics -lcsfml-window -lm
+OBJ = $(SRC:.c=.o)
 
-OBJ	=	$(SRC:.c=.o)
+OUT = application
 
-CC	=	gcc
+CC = gcc
 
-NAME	=	bootstrap
+CFLAGS = -Wall -Wextra -Werror -g3
 
-all:	$(NAME)
+INCLUDES = -Iinclude/
 
-$(NAME):	$(OBJ)
-#	@make -s -C ./lordsclib/
-	$(CC) -o $(NAME) $(OBJ) $(LDFLAGS) $(CFLAGS)
+LDFLAGS = -lcsfml-graphics -lcsfml-window -lcsfml-system -lm
+
+.SUFFIXES: .c .o
+.c.o:
+	$(CC) -o $@ -c $< $(CFLAGS) $(INCLUDES) $(LDFLAGS)
+
+all: $(OUT)
+
+$(OUT): $(OBJ)
+	$(CC) -o $(OUT) $(OBJ) $(CFLAGS) $(INCLUDES) $(LDFLAGS)
 
 clean:
-#	@make clean -C ./lordsclib/
-	@rm -f *~
-	@rm -f \#*\#
-	@rm -f $(OBJ)
+	rm -f $(OBJ)
 
-fclean:	clean
-#	@make fclean -C ./lordsclib/
-	@rm -f $(NAME)
+fclean: clean
+	rm -f $(OUT)
 
-re:	fclean	all
+re: fclean all
