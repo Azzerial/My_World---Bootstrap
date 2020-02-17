@@ -2,7 +2,7 @@
 
 Here's an enhanced version of the **my_world** project's bootstrap. To download it, type:
 
-    git clone https://github.com/Azzerial/refactored-pancake
+    git clone https://github.com/Azzerial/My_World---Bootstrap.git
 
 To compile and run it:
 
