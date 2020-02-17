@@ -38,8 +38,8 @@ Here's some few shortcuts:
 
 Here are some random & perhaps useful links for you:
 
-* [**YouTube ideas & inspiration (Document)**](youtube-google-doc)
-* [**Useful links & resources (Document)**](links-google-doc)
-* [**My final review presentation (PowerPoint)**](review-google-slide)
-* [**A short tutorial to explain 3D rotations (PowerPoint)**](rotations-google-slide)
-* [**A workshop I made on Isometric 2.5D view**](isometric-github)
+* [**YouTube ideas & inspiration (Document)**][youtube-google-doc]
+* [**Useful links & resources (Document)**][links-google-doc]
+* [**My final review presentation (PowerPoint)**][review-google-slide]
+* [**A short tutorial to explain 3D rotations (PowerPoint)**][rotations-google-slide]
+* [**A workshop I made on Isometric 2.5D view**][isometric-github]
