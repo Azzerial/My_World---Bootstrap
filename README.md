@@ -1,12 +1,14 @@
 # My_World - Bootstrap
 
 Here's an enhanced version of the **my_world** project's bootstrap. To download it, type:
-
-    git clone https://github.com/Azzerial/My_World---Bootstrap.git
+```
+git clone https://github.com/Azzerial/My_World---Bootstrap
+```
 
 To compile and run it:
-
-    make ; ./bootstrap
+```
+make ; ./application
+```
 
 Here's some few shortcuts:
 * Rotate left(*): `LeftKey [←]`
